@@ -22,6 +22,9 @@ export default defineEventHandler(async (event) => {
             } as HTTPResponse;
         }
 
+        // Update chat history with the prompt
+        chatHistory.push(`User: ${body.message}`);
+
         // Check if the total token count exceeds the limit
         const totalTokens = estimateTotalTokenCount(chatHistory);
         if (totalTokens >= Constants.MAX_TOKEN_COUNT) {
@@ -36,8 +39,7 @@ export default defineEventHandler(async (event) => {
         // Process the chat message and include chat history with a token limit
         const response = await chatProcess(body.message, chatHistory);
         
-        // Update chat history with the new message and response
-        chatHistory.push(`User: ${body.message}`);
+        // Update chat history with the response
         chatHistory.push(`Bot: ${response}`);
 
         return {
