@@ -1,5 +1,7 @@
 declare global {
+  const BASE_TEMPLATE: typeof import('../../server/utils/services/templates')['BASE_TEMPLATE']
   const Constants: typeof import('../../server/utils/constant')['Constants']
+  const STANDALONE_TEMPLATE: typeof import('../../server/utils/services/templates')['STANDALONE_TEMPLATE']
   const appendCorsHeaders: typeof import('../../node_modules/h3')['appendCorsHeaders']
   const appendCorsPreflightHeaders: typeof import('../../node_modules/h3')['appendCorsPreflightHeaders']
   const appendHeader: typeof import('../../node_modules/h3')['appendHeader']
@@ -10,6 +12,7 @@ declare global {
   const cachedEventHandler: typeof import('../../node_modules/nitropack/dist/runtime/internal/cache')['cachedEventHandler']
   const cachedFunction: typeof import('../../node_modules/nitropack/dist/runtime/internal/cache')['cachedFunction']
   const callNodeListener: typeof import('../../node_modules/h3')['callNodeListener']
+  const chatProcess: typeof import('../../server/utils/actions/chatProcess')['chatProcess']
   const clearResponseHeaders: typeof import('../../node_modules/h3')['clearResponseHeaders']
   const clearSession: typeof import('../../node_modules/h3')['clearSession']
   const createApp: typeof import('../../node_modules/h3')['createApp']
@@ -18,6 +21,7 @@ declare global {
   const createEvent: typeof import('../../node_modules/h3')['createEvent']
   const createEventStream: typeof import('../../node_modules/h3')['createEventStream']
   const createRouter: typeof import('../../node_modules/h3')['createRouter']
+  const decodePollyLines: typeof import('../../server/utils/services/decodePollyLines')['decodePollyLines']
   const defaultContentType: typeof import('../../node_modules/h3')['defaultContentType']
   const defineCachedEventHandler: typeof import('../../node_modules/nitropack/dist/runtime/internal/cache')['defineCachedEventHandler']
   const defineCachedFunction: typeof import('../../node_modules/nitropack/dist/runtime/internal/cache')['defineCachedFunction']
@@ -36,15 +40,23 @@ declare global {
   const defineWebSocketHandler: typeof import('../../node_modules/h3')['defineWebSocketHandler']
   const deleteCookie: typeof import('../../node_modules/h3')['deleteCookie']
   const dynamicEventHandler: typeof import('../../node_modules/h3')['dynamicEventHandler']
+  const embeddings: typeof import('../../server/utils/actions/textEmbed')['embeddings']
   const eventHandler: typeof import('../../node_modules/h3')['eventHandler']
   const fetchWithEvent: typeof import('../../node_modules/h3')['fetchWithEvent']
   const fromNodeMiddleware: typeof import('../../node_modules/h3')['fromNodeMiddleware']
   const fromPlainHandler: typeof import('../../node_modules/h3')['fromPlainHandler']
   const fromWebHandler: typeof import('../../node_modules/h3')['fromWebHandler']
   const getCookie: typeof import('../../node_modules/h3')['getCookie']
+  const getEmbeddings: typeof import('../../server/utils/actions/textEmbed')['getEmbeddings']
+  const getFromIndex: typeof import('../../server/utils/query/getFromIndex')['getFromIndex']
+  const getGeoCodes: typeof import('../../server/utils/query/getGeoCodes')['getGeoCodes']
   const getHeader: typeof import('../../node_modules/h3')['getHeader']
   const getHeaders: typeof import('../../node_modules/h3')['getHeaders']
+  const getIndex: typeof import('../../server/utils/query/client')['getIndex']
+  const getLocationProcess: typeof import('../../server/utils/actions/getLocationProcess')['getLocationProcess']
   const getMethod: typeof import('../../node_modules/h3')['getMethod']
+  const getPlacesCodes: typeof import('../../server/utils/query/getPlacesCodes')['default']
+  const getPlacesProcess: typeof import('../../server/utils/actions/getPlacesProcess')['getPlacesProcess']
   const getProxyRequestHeaders: typeof import('../../node_modules/h3')['getProxyRequestHeaders']
   const getQuery: typeof import('../../node_modules/h3')['getQuery']
   const getRequestFingerprint: typeof import('../../node_modules/h3')['getRequestFingerprint']
@@ -77,8 +89,11 @@ declare global {
   const isStream: typeof import('../../node_modules/h3')['isStream']
   const isWebResponse: typeof import('../../node_modules/h3')['isWebResponse']
   const lazyEventHandler: typeof import('../../node_modules/h3')['lazyEventHandler']
+  const listPollyLines: typeof import('../../server/utils/query/listPlooylines')['listPollyLines']
   const nitroPlugin: typeof import('../../node_modules/nitropack/dist/runtime/internal/plugin')['nitroPlugin']
+  const nonStreamingChatModel: typeof import('../../server/utils/services/gptModels')['nonStreamingChatModel']
   const parseCookies: typeof import('../../node_modules/h3')['parseCookies']
+  const pdfTextSplitter: typeof import('../../server/utils/actions/pdfProcess')['pdfTextSplitter']
   const promisifyNodeListener: typeof import('../../node_modules/h3')['promisifyNodeListener']
   const proxyRequest: typeof import('../../node_modules/h3')['proxyRequest']
   const readBody: typeof import('../../node_modules/h3')['readBody']
@@ -86,10 +101,13 @@ declare global {
   const readMultipartFormData: typeof import('../../node_modules/h3')['readMultipartFormData']
   const readRawBody: typeof import('../../node_modules/h3')['readRawBody']
   const readValidatedBody: typeof import('../../node_modules/h3')['readValidatedBody']
+  const releasePoints: typeof import('../../server/utils/services/decodePollyLines')['releasePoints']
   const removeResponseHeader: typeof import('../../node_modules/h3')['removeResponseHeader']
   const runTask: typeof import('../../node_modules/nitropack/dist/runtime/internal/task')['runTask']
   const sanitizeStatusCode: typeof import('../../node_modules/h3')['sanitizeStatusCode']
   const sanitizeStatusMessage: typeof import('../../node_modules/h3')['sanitizeStatusMessage']
+  const saveEmbeddings: typeof import('../../server/utils/actions/saveVectors')['saveEmbeddings']
+  const saveIndex: typeof import('../../server/utils/query/saveIndex')['saveIndex']
   const sealSession: typeof import('../../node_modules/h3')['sealSession']
   const send: typeof import('../../node_modules/h3')['send']
   const sendError: typeof import('../../node_modules/h3')['sendError']
@@ -107,6 +125,7 @@ declare global {
   const setResponseHeaders: typeof import('../../node_modules/h3')['setResponseHeaders']
   const setResponseStatus: typeof import('../../node_modules/h3')['setResponseStatus']
   const splitCookiesString: typeof import('../../node_modules/h3')['splitCookiesString']
+  const streamingChatModel: typeof import('../../server/utils/services/gptModels')['streamingChatModel']
   const toEventHandler: typeof import('../../node_modules/h3')['toEventHandler']
   const toNodeListener: typeof import('../../node_modules/h3')['toNodeListener']
   const toPlainHandler: typeof import('../../node_modules/h3')['toPlainHandler']
@@ -135,4 +154,19 @@ export { useEvent } from 'nitropack/runtime/internal/context';
 export { defineTask, runTask } from 'nitropack/runtime/internal/task';
 export { defineNitroErrorHandler } from 'nitropack/runtime/internal/error';
 export { appendCorsHeaders, appendCorsPreflightHeaders, appendHeader, appendHeaders, appendResponseHeader, appendResponseHeaders, assertMethod, callNodeListener, clearResponseHeaders, clearSession, createApp, createAppEventHandler, createError, createEvent, createEventStream, createRouter, defaultContentType, defineEventHandler, defineLazyEventHandler, defineNodeListener, defineNodeMiddleware, defineRequestMiddleware, defineResponseMiddleware, defineWebSocket, defineWebSocketHandler, deleteCookie, dynamicEventHandler, eventHandler, fetchWithEvent, fromNodeMiddleware, fromPlainHandler, fromWebHandler, getCookie, getHeader, getHeaders, getMethod, getProxyRequestHeaders, getQuery, getRequestFingerprint, getRequestHeader, getRequestHeaders, getRequestHost, getRequestIP, getRequestPath, getRequestProtocol, getRequestURL, getRequestWebStream, getResponseHeader, getResponseHeaders, getResponseStatus, getResponseStatusText, getRouterParam, getRouterParams, getSession, getValidatedQuery, getValidatedRouterParams, handleCacheHeaders, handleCors, isCorsOriginAllowed, isError, isEvent, isEventHandler, isMethod, isPreflightRequest, isStream, isWebResponse, lazyEventHandler, parseCookies, promisifyNodeListener, proxyRequest, readBody, readFormData, readMultipartFormData, readRawBody, readValidatedBody, removeResponseHeader, sanitizeStatusCode, sanitizeStatusMessage, sealSession, send, sendError, sendIterable, sendNoContent, sendProxy, sendRedirect, sendStream, sendWebResponse, serveStatic, setCookie, setHeader, setHeaders, setResponseHeader, setResponseHeaders, setResponseStatus, splitCookiesString, toEventHandler, toNodeListener, toPlainHandler, toWebHandler, toWebRequest, unsealSession, updateSession, useBase, useSession, writeEarlyHints } from 'h3';
+export { chatProcess } from '../../server/utils/actions/chatProcess';
+export { getLocationProcess } from '../../server/utils/actions/getLocationProcess';
+export { getPlacesProcess } from '../../server/utils/actions/getPlacesProcess';
+export { pdfTextSplitter } from '../../server/utils/actions/pdfProcess';
+export { saveEmbeddings } from '../../server/utils/actions/saveVectors';
+export { embeddings, getEmbeddings } from '../../server/utils/actions/textEmbed';
 export { Constants } from '../../server/utils/constant';
+export { getIndex } from '../../server/utils/query/client';
+export { getFromIndex } from '../../server/utils/query/getFromIndex';
+export { getGeoCodes } from '../../server/utils/query/getGeoCodes';
+export { default as getPlacesCodes } from '../../server/utils/query/getPlacesCodes';
+export { listPollyLines } from '../../server/utils/query/listPlooylines';
+export { saveIndex } from '../../server/utils/query/saveIndex';
+export { decodePollyLines, releasePoints } from '../../server/utils/services/decodePollyLines';
+export { streamingChatModel, nonStreamingChatModel } from '../../server/utils/services/gptModels';
+export { BASE_TEMPLATE, STANDALONE_TEMPLATE } from '../../server/utils/services/templates';

@@ -3,29 +3,30 @@ import { Server } from 'node:http';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { parentPort, threadId } from 'node:worker_threads';
-import { getRequestHeader, splitCookiesString, setResponseHeader, setResponseStatus, send, defineEventHandler, setResponseHeaders, handleCacheHeaders, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, createError, getRouterParam, getQuery as getQuery$1, readBody, readMultipartFormData } from 'file://D:/Projects/lms-q-gen/node_modules/h3/dist/index.mjs';
-import { provider, isWindows } from 'file://D:/Projects/lms-q-gen/node_modules/std-env/dist/index.mjs';
-import destr from 'file://D:/Projects/lms-q-gen/node_modules/destr/dist/index.mjs';
-import { createHooks } from 'file://D:/Projects/lms-q-gen/node_modules/hookable/dist/index.mjs';
-import { createFetch as createFetch$1, Headers as Headers$1 } from 'file://D:/Projects/lms-q-gen/node_modules/ofetch/dist/node.mjs';
-import { createCall, createFetch } from 'file://D:/Projects/lms-q-gen/node_modules/unenv/runtime/fetch/index.mjs';
-import { hash } from 'file://D:/Projects/lms-q-gen/node_modules/ohash/dist/index.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery } from 'file://D:/Projects/lms-q-gen/node_modules/ufo/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file://D:/Projects/lms-q-gen/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file://D:/Projects/lms-q-gen/node_modules/unstorage/drivers/fs.mjs';
-import { klona } from 'file://D:/Projects/lms-q-gen/node_modules/klona/dist/index.mjs';
-import defu, { defuFn } from 'file://D:/Projects/lms-q-gen/node_modules/defu/dist/defu.mjs';
-import { snakeCase } from 'file://D:/Projects/lms-q-gen/node_modules/scule/dist/index.mjs';
-import { toRouteMatcher, createRouter } from 'file://D:/Projects/lms-q-gen/node_modules/radix3/dist/index.mjs';
-import { StringOutputParser } from 'file://D:/Projects/lms-q-gen/node_modules/@langchain/core/output_parsers.js';
-import { ChatPromptTemplate } from 'file://D:/Projects/lms-q-gen/node_modules/@langchain/core/prompts.js';
-import { RunnableSequence } from 'file://D:/Projects/lms-q-gen/node_modules/@langchain/core/runnables.js';
-import { PineconeStore } from 'file://D:/Projects/lms-q-gen/node_modules/@langchain/pinecone/index.js';
-import { OpenAIEmbeddings, ChatOpenAI } from 'file://D:/Projects/lms-q-gen/node_modules/@langchain/openai/index.js';
-import { Pinecone } from 'file://D:/Projects/lms-q-gen/node_modules/@pinecone-database/pinecone/dist/index.js';
-import { WebPDFLoader } from 'file://D:/Projects/lms-q-gen/node_modules/@langchain/community/document_loaders/web/pdf.js';
-import { RecursiveCharacterTextSplitter } from 'file://D:/Projects/lms-q-gen/node_modules/@langchain/textsplitters/index.js';
-import axios from 'file://D:/Projects/lms-q-gen/node_modules/axios/index.js';
+import { getRequestHeader, splitCookiesString, setResponseHeader, setResponseStatus, send, defineEventHandler, setResponseHeaders, handleCacheHeaders, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, createError, getRouterParam, getQuery as getQuery$1, readBody, readMultipartFormData } from 'file://C:/Projects/lms-q-gen/node_modules/h3/dist/index.mjs';
+import { provider, isWindows } from 'file://C:/Projects/lms-q-gen/node_modules/std-env/dist/index.mjs';
+import destr from 'file://C:/Projects/lms-q-gen/node_modules/destr/dist/index.mjs';
+import { createHooks } from 'file://C:/Projects/lms-q-gen/node_modules/hookable/dist/index.mjs';
+import { createFetch as createFetch$1, Headers as Headers$1 } from 'file://C:/Projects/lms-q-gen/node_modules/ofetch/dist/node.mjs';
+import { createCall, createFetch } from 'file://C:/Projects/lms-q-gen/node_modules/unenv/runtime/fetch/index.mjs';
+import { hash } from 'file://C:/Projects/lms-q-gen/node_modules/ohash/dist/index.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery } from 'file://C:/Projects/lms-q-gen/node_modules/ufo/dist/index.mjs';
+import { createStorage, prefixStorage } from 'file://C:/Projects/lms-q-gen/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file://C:/Projects/lms-q-gen/node_modules/unstorage/drivers/fs.mjs';
+import { klona } from 'file://C:/Projects/lms-q-gen/node_modules/klona/dist/index.mjs';
+import defu, { defuFn } from 'file://C:/Projects/lms-q-gen/node_modules/defu/dist/defu.mjs';
+import { snakeCase } from 'file://C:/Projects/lms-q-gen/node_modules/scule/dist/index.mjs';
+import { toRouteMatcher, createRouter } from 'file://C:/Projects/lms-q-gen/node_modules/radix3/dist/index.mjs';
+import { StringOutputParser } from 'file://C:/Projects/lms-q-gen/node_modules/@langchain/core/output_parsers.js';
+import { ChatPromptTemplate } from 'file://C:/Projects/lms-q-gen/node_modules/@langchain/core/prompts.js';
+import { RunnableSequence } from 'file://C:/Projects/lms-q-gen/node_modules/@langchain/core/runnables.js';
+import { PineconeStore } from 'file://C:/Projects/lms-q-gen/node_modules/@langchain/pinecone/index.js';
+import { OpenAIEmbeddings, ChatOpenAI } from 'file://C:/Projects/lms-q-gen/node_modules/@langchain/openai/index.js';
+import { Pinecone } from 'file://C:/Projects/lms-q-gen/node_modules/@pinecone-database/pinecone/dist/index.js';
+import { WebPDFLoader } from 'file://C:/Projects/lms-q-gen/node_modules/@langchain/community/document_loaders/web/pdf.js';
+import { RecursiveCharacterTextSplitter } from 'file://C:/Projects/lms-q-gen/node_modules/@langchain/textsplitters/index.js';
+import polyline from 'file://C:/Projects/lms-q-gen/node_modules/@mapbox/polyline/src/polyline.js';
+import axios from 'file://C:/Projects/lms-q-gen/node_modules/axios/index.js';
 
 function hasReqHeader(event, name, includes) {
   const value = getRequestHeader(event, name);
@@ -176,7 +177,7 @@ const plugins = [
   
 ];
 
-const _MARcAM = defineEventHandler((event) => {
+const _dUbfDo = defineEventHandler((event) => {
   setResponseHeaders(event, {
     "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
     "Access-Control-Allow-Origin": "*",
@@ -191,28 +192,28 @@ const _MARcAM = defineEventHandler((event) => {
   }
 });
 
-const _lazy_L5A06g = () => Promise.resolve().then(function () { return chatChain_post$1; });
-const _lazy_UfJpEa = () => Promise.resolve().then(function () { return convert_post$1; });
-const _lazy_RCHmQp = () => Promise.resolve().then(function () { return save_post$1; });
-const _lazy_LEVvap = () => Promise.resolve().then(function () { return genChunk_post$1; });
-const _lazy_GKtiZQ = () => Promise.resolve().then(function () { return saveVector_post$1; });
-const _lazy_Fk7PMK = () => Promise.resolve().then(function () { return direction_post$1; });
-const _lazy_brpP0V = () => Promise.resolve().then(function () { return places_post$1; });
-const _lazy_Ts7rKo = () => Promise.resolve().then(function () { return index$1; });
+const _lazy_gh9MHB = () => Promise.resolve().then(function () { return chatChain_post$1; });
+const _lazy_74TtMs = () => Promise.resolve().then(function () { return convert_post$1; });
+const _lazy_S6JpWy = () => Promise.resolve().then(function () { return save_post$1; });
+const _lazy_Ob7pgL = () => Promise.resolve().then(function () { return genChunk_post$1; });
+const _lazy_6AhbNq = () => Promise.resolve().then(function () { return saveVector_post$1; });
+const _lazy_IoB5Tf = () => Promise.resolve().then(function () { return direction_post$1; });
+const _lazy_10pFC4 = () => Promise.resolve().then(function () { return places_post$1; });
+const _lazy_kTGtls = () => Promise.resolve().then(function () { return index$1; });
 
 const handlers = [
-  { route: '', handler: _MARcAM, lazy: false, middleware: true, method: undefined },
-  { route: '/api/chat/chat-chain', handler: _lazy_L5A06g, lazy: true, middleware: false, method: "post" },
-  { route: '/api/embeddings/convert', handler: _lazy_UfJpEa, lazy: true, middleware: false, method: "post" },
-  { route: '/api/embeddings/save', handler: _lazy_RCHmQp, lazy: true, middleware: false, method: "post" },
-  { route: '/api/file/gen-chunk', handler: _lazy_LEVvap, lazy: true, middleware: false, method: "post" },
-  { route: '/api/file/save-vector', handler: _lazy_GKtiZQ, lazy: true, middleware: false, method: "post" },
-  { route: '/api/navigation/direction', handler: _lazy_Fk7PMK, lazy: true, middleware: false, method: "post" },
-  { route: '/api/navigation/places', handler: _lazy_brpP0V, lazy: true, middleware: false, method: "post" },
-  { route: '/', handler: _lazy_Ts7rKo, lazy: true, middleware: false, method: undefined }
+  { route: '', handler: _dUbfDo, lazy: false, middleware: true, method: undefined },
+  { route: '/api/chat/chat-chain', handler: _lazy_gh9MHB, lazy: true, middleware: false, method: "post" },
+  { route: '/api/embeddings/convert', handler: _lazy_74TtMs, lazy: true, middleware: false, method: "post" },
+  { route: '/api/embeddings/save', handler: _lazy_S6JpWy, lazy: true, middleware: false, method: "post" },
+  { route: '/api/file/gen-chunk', handler: _lazy_Ob7pgL, lazy: true, middleware: false, method: "post" },
+  { route: '/api/file/save-vector', handler: _lazy_6AhbNq, lazy: true, middleware: false, method: "post" },
+  { route: '/api/navigation/direction', handler: _lazy_IoB5Tf, lazy: true, middleware: false, method: "post" },
+  { route: '/api/navigation/places', handler: _lazy_10pFC4, lazy: true, middleware: false, method: "post" },
+  { route: '/', handler: _lazy_kTGtls, lazy: true, middleware: false, method: undefined }
 ];
 
-const serverAssets = [{"baseName":"server","dir":"D:/Projects/lms-q-gen/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"C:/Projects/lms-q-gen/server/assets"}];
 
 const assets = createStorage();
 
@@ -224,11 +225,11 @@ const storage = createStorage({});
 
 storage.mount('/assets', assets);
 
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"D:\\Projects\\lms-q-gen","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"D:\\Projects\\lms-q-gen\\server","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"D:\\Projects\\lms-q-gen\\.nitro","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"D:\\Projects\\lms-q-gen\\.nitro\\cache","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"D:\\Projects\\lms-q-gen\\.data\\kv","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:\\Projects\\lms-q-gen","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:\\Projects\\lms-q-gen\\server","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:\\Projects\\lms-q-gen\\.nitro","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:\\Projects\\lms-q-gen\\.nitro\\cache","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Projects\\lms-q-gen\\.data\\kv","ignore":["**/node_modules/**","**/.git/**"]}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage, base) : storage;
@@ -955,6 +956,14 @@ const embeddings = new OpenAIEmbeddings({
   batchSize: 512,
   model: "text-embedding-ada-002"
 });
+const getEmbeddings = async (text) => {
+  try {
+    const query = await embeddings.embedQuery(text);
+    return query;
+  } catch (error) {
+    throw new Error("Error splitting PDF: " + error);
+  }
+};
 
 const getFromIndex = async () => {
   const index = await getIndex();
@@ -977,25 +986,47 @@ new ChatOpenAI({
   apiKey: process.env.OPENAI_KEY
 });
 
-const BASE_TEMPLATE = `Classify the user's question into one of the following categories: [Places recommendation, Tour Packages, Budget Estimation].
-Examples:
-Question: "What are the best places to visit in Sri Lanka?"
-Classification: Places recommendation
-Answer layout: end of the answer provide a list of places in json separately
-
-Question: "I like to enjoy the wildlife, do surfing and hiking. Can you suggest some places to visit?"
-Classification: Tour Packages
-Answer layout: end of the answer provide a list of places in json separately
-
-Question: "How much does it cost to visit ?"
-Classification: Budget Estimation
+const BASE_TEMPLATE = `You are only assigned to generate questions and answers that are relevant to the given context. 
+If user asks anything other than generating questions, politely deny the request. 
+Generating questions and answers should be done in according to the following format:
+1. Add a section (ex:Section 01, Section 02)
+2. Add section rules
+2. Add 5-10 set of questions for each section
+3. There should be 4-6 multiple choices for each question.
+4. Multiple choice count should be equal through out each section. (ex: you cannot have 4 multiple choices in section 01 question 01 and 5 multiple choices in section 01 question 02)
+3. Questions may have one or more answers.
+4. Answers should be relevant to the question
+5. Add a case study based questions, if only user asks to generate
 
 {context}
 
-Now classify the following:
-Question: "{question}"
-Classification:
-Helpful answer in markdown:
+Output: Should be in following html format:
+<h3>Section 01</h3>
+<p>Rules: Choose <strong>ONE CORRECT</strong> answer from the options provided.</p>
+<p><strong>Question 1</strong></p>
+<p>Customer value is defined as?</p>
+<ol>
+  <li>a) The assessment of the product's overall capacity to satisfy customer needs</li>
+  <li>b) The monetary value from a customer to a producer</li>
+  <li>c) The importance a consumer places on the price of the product over other attributes</li>
+  <li>d) The difference between the price a customer pays and the producer's cost</li>
+</ol>
+<p><strong>Correct answer: 1</strong></p>
+<h3>Section Number</h3>
+<p>Rules: Choose <strong>ONE CORRECT</strong> answer by referring to the case study.</p>
+
+<h4>Case Study: Boosting E-commerce Sales with AI</h4>
+<p>An online marketplace integrated an AI-driven recommendation engine, increasing order values by 30% and customer retention by 20% within six months.</p>
+
+<p><strong>Question 1</strong></p>
+<p>Customer value is defined as?</p>
+<ol>
+  <li>a) The assessment of the product's overall capacity to satisfy customer needs</li>
+  <li>b) The monetary value from a customer to a producer</li>
+  <li>c) The importance a consumer places on the price of the product over other attributes</li>
+  <li>d) The difference between the price a customer pays and the producer's cost</li>
+</ol>
+<p><strong>Correct answers: 2, 4</strong></p>
 `;
 const STANDALONE_TEMPLATE = `Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question.
 
@@ -1015,12 +1046,8 @@ const chatProcess = async (message, chatHistory, options) => {
       if (!retrievedDocs || retrievedDocs.length === 0) {
         throw new Error("No documents found");
       }
-      let prompt;
-      if (chatHistory.length == 0) {
-        prompt = ChatPromptTemplate.fromTemplate(BASE_TEMPLATE);
-      } else {
-        prompt = ChatPromptTemplate.fromTemplate(STANDALONE_TEMPLATE.replace("{chat_history}", chatHistory.join("\n")));
-      }
+      const promptTemplate = chatHistory.length === 0 ? BASE_TEMPLATE : STANDALONE_TEMPLATE.replace("{chat_history}", chatHistory.join("\n"));
+      const prompt = ChatPromptTemplate.fromTemplate(promptTemplate);
       const chain = RunnableSequence.from([
         prompt,
         streamingChatModel,
@@ -1058,6 +1085,7 @@ const chatChain_post = defineEventHandler(async (event) => {
         success: false
       };
     }
+    chatHistory.push(`User: ${body.message}`);
     const totalTokens = estimateTotalTokenCount(chatHistory);
     if (totalTokens >= Constants.MAX_TOKEN_COUNT) {
       return {
@@ -1068,7 +1096,6 @@ const chatChain_post = defineEventHandler(async (event) => {
       };
     }
     const response = await chatProcess(body.message, chatHistory);
-    chatHistory.push(`User: ${body.message}`);
     chatHistory.push(`Bot: ${response}`);
     return {
       message: "Chat Response created successfully",
@@ -1240,6 +1267,35 @@ const saveVector_post$1 = /*#__PURE__*/Object.freeze({
   __proto__: null,
   default: saveVector_post
 });
+
+const calculateDistance = (first, next) => {
+  const R = 6371;
+  let mFirst = next.lat - first.lat;
+  let mSecond = next.lng - first.lng;
+  const dLat = degreesToRadians(mFirst);
+  const dLng = degreesToRadians(mSecond);
+  const log = Math.sin(dLat / 2) ** 2 + Math.cos(degreesToRadians(first.lat)) * Math.cos(degreesToRadians(next.lat)) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(log));
+};
+const degreesToRadians = (degrees) => degrees * Math.PI / 180;
+const decodePollyLines = (pollyLines) => {
+  return polyline.decode(pollyLines).map(([lat, lng]) => ({ lat, lng }));
+};
+const releasePoints = (points) => {
+  const newPoints = [];
+  let distance = 0;
+  for (let i = 0; i < points.length - 1; i++) {
+    const start = points[i];
+    const end = points[i + 1];
+    const segmentDistance = calculateDistance(start, end);
+    distance += segmentDistance;
+    if (distance >= 0.55) {
+      newPoints.push(end);
+      distance = 0;
+    }
+  }
+  return newPoints;
+};
 
 const getGeoCodes = async ({ startLocation, endLocation }) => {
   try {
