@@ -27,7 +27,7 @@ export default defineEventHandler(async (event) => {
 
         // Check if the total token count exceeds the limit
         const totalTokens = estimateTotalTokenCount(chatHistory);
-        if (totalTokens >= Constants.MAX_TOKEN_COUNT) {
+        if (totalTokens >= Constants.MAX_PROMPT_TOKEN_COUNT) {
             return {
                 message: "Error: Chat history limit exceeded. Please start a new conversation.",
                 statusCode: 400,
